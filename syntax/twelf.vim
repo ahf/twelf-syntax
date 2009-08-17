@@ -26,13 +26,6 @@ syn region TwelfBlockComment    start="%{" end="}%" contains=TwelfTodo
 syn match TwelfPunctation       ":\|\.\|="
 syn match TwelfDecleration      "^\s*[^A-Z_]\k*\s*:" contains=TwelfPunctation
 syn match TwelfArrow            "->\|<-"
-
-syn match TwelfCurly            "{\|}" contained
-syn match TwelfSquare           "\[\|\]" contained
-syn match TwelfBindDecleration  "[^A-Z_{\[]\k*\s*:" contains=TwelfPunctation contained
-syn region TwelfPiBind          start="{" end="}" keepend transparent contains=TwelfCurly,TwelfPunctation,TwelfFreeVariable,TwelfType,TwelfBindDecleration,TwelfArrow
-syn region TwelfLambdaBind      start="\[" end="\]" keepend transparent contains=TwelfSquare,TwelfPunctation,TwelfFreeVariable,TwelfType,TwelfBindDecleration,TwelfArrow
-
 syn match TwelfFreeVariable     "\<[A-Z_]\k*\>" 
 
 syn match TwelfParenthesis      "(\|)" contained
@@ -48,9 +41,6 @@ hi def link TwelfDecleration    Statement
 hi def link TwelfPunctation     Operator
 hi def link TwelfParenthesis    PreProc
 hi def link TwelfFreeVariable   Constant
-hi def link TwelfSquare         PreProc
-hi def link TwelfCurly          PreProc
-hi def link TwelfBindDecleration Special
 
 let b:current_syntax = "twelf"
 
