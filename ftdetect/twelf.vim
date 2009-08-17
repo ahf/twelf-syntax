@@ -1,4 +1,4 @@
-" Vim filetype plugin file
+" Vim filetype detection file
 " Language:     Twelf
 " Author:       Alexander Færøy <ahf@0x90.dk>
 " Copyright:    Copyright (c) 2009 Alexander Færøy
@@ -8,8 +8,6 @@ if &compatible || v:version < 603
     finish
 endif
 
-augroup filetypedetect
-    autocmd! BufRead,BufNewFile *.elf setfiletype twelf
-augroup END
+autocmd BufRead,BufNewFile *.elf setfiletype twelf
 
 " vim: set et ts=4 :
